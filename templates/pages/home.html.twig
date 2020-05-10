@@ -1,0 +1,39 @@
+ {% extends'base.html.twig' %}
+ {% block title 'K.DAMAK Shipping Company S.A'  %}
+
+ {% block body %}
+  <div class="cotainer">
+   <h1>K.DAMAK Shipping Company S.A</h1>
+   <p>  La K.DAMAK Shipping Company S.A a été fondée en 1982 par
+    feu Kamel Damak. Depuis plus de 25 ans la K.DAMAK Shipping Company
+    s'est imposée comme l'un des leaders dans le domaine du transport :
+    Agent maritime, croisiériste, transitaire, acconier, courtier,
+    transporteur terrestre, transporteur aérien, organisateur de tous
+    types de transports specialisés et porte à porte . Notre société a fait
+    ses preuves sur tout le marché local, ainsi qu'à travers le monde entier
+    en gagnant la confiance de tous les intervenants dans la chaine du
+    transport maritime, aérien et terrestre. Grace à une grande faculté
+    d'adaptation, nous avons su rester en phase avec les besoins de l'économie
+    Tunisienne et internationnale.</p>
+
+  </div>
+  <div class="container">
+   <h2>our benefis</h2>
+   <div class="row flex">
+    {% for property in properties %}
+     <div class="col-3" >
+      <div class="card.body">
+       <h5 class="card.title">
+        <a href="{{path('property.show', {id: property.id , slug :property.slug})}}">{{ property.titel }}</a>
+       </h5>
+       <p class="card.text">{{ property.city }} {{ property.postalCode }}</p>
+       <div class="text-primary" style="font-weight: bold ; font-size:2rem ">{{ property.formattedPrice }}</div>
+      </div>
+     </div>
+
+    {%endfor%}
+   </div>
+  </div>
+
+
+ {% endblock %}

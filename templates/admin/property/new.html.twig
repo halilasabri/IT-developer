@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Créer un nouveau Agence </h1>
+        {{ include ('admin/property/form.html.twig' , {form : form ,button: 'Créer'}) }}
+    </div>
+
+{% endblock %}
+
+
+
